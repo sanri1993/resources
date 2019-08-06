@@ -1,0 +1,32 @@
+package com.sanri.entity;
+
+import javax.persistence.*;
+/**
+ * 作  者: ${AUTHOR}
+ * 时  间: ${DATE} ${TIME}
+ * 数据表: ${IPPORT} ${SCHEMA} ${TABLE}
+ * 
+ * ${TABLE_COMMENTS} 
+ */
+@Entity
+@Table(name="${TABLE}")
+public class ${PO_NAME} extends BaseEntity{
+#foreach( $property in ${PROPERTIES})
+
+#if(${property.comments} != "")	// ${property.comments} 
+#end
+	@Column(name = "${property.columnName}")
+	private ${property.type} ${property.name};
+
+#end
+
+#foreach( $property in ${PROPERTIES})
+	public ${property.type} get${property.capitalizeName}() {
+		return $property.name;
+	}
+	public void set${property.capitalizeName}(${property.type} $property.name) {
+		this.$property.name = $property.name;
+	}
+#end
+
+}

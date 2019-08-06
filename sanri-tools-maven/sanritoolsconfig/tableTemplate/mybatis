@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sanri.question.mapper.${PO_NAME}Mapper">
+    <!-- base result map -->
+    <resultMap id="BaseResultMap" type="com.sanri.question.entity.${PO_NAME}">
+     #foreach( $property in ${PROPERTIES})
+	 #if($property.primaryKey == true)
+	<id column="$property.columnName" jdbcType="$property.jdbcType" property="$property.name"/>
+	 #end
+#if($property.primaryKey == false)
+	<result column="$property.columnName" jdbcType="$property.jdbcType" property="$property.name"/>
+#end #end
+	</resultMap>
+
+    <!-- base column list -->
+    <sql id="columns"> #foreach( $column in ${COLUMNS})#if( $!{velocityCount} != 1),#end$column.columnName#end </sql>
+
+	<insert id="insert" parameterType="com.sanri.question.entity.${PO_NAME}" >
+		insert into ${TABLE}( <include refid="columns"> )
+		values (#foreach( $property in ${PROPERTIES})#if( $!{velocityCount} != 1),#end#{$property.name}#end )
+	</insert>
+</mapper>

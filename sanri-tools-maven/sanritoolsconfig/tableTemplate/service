@@ -1,0 +1,26 @@
+package com.eg.egsc.scp.informationreleaseapp.service.impl;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import com.eg.egsc.scp.informationdelivery.mapper.entity.*;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Service;
+
+/**
+ * author:${AUTHOR}
+ * 日期:${DATE} ${TIME}
+ */
+
+@Service
+public class ${PO_NAME}ServiceImpl implements IDeviceGroupService {
+	@Autowired
+	@Qualifier("stInfoDeviceServiceImpl")
+	private ${PO_NAME}Service ${PO_NAME_LOWER}ServiceImpl;
+	
+	
+
+}
