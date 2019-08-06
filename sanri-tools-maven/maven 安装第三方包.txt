@@ -1,0 +1,3 @@
+mvn install:install-file -Dfile=d:\IKAnalyzer2012FF_u1.jar -DgroupId=org.wltea.analyzer -DartifactId=IKAnalyzer -Dversion=2012FF_u1 -Dpackaging=jar
+mvn install:install-file -Dfile=d:\diamond-utils-2.0.5.5.jar -DgroupId=com.taobao.diamond -DartifactId=diamond-utils -Dversion=2.0.5.5 -Dpackaging=jar
+mvn install:install-file -Dfile=d:\diamond-client-2.0.5.5.jar -DgroupId=com.taobao.diamond -DartifactId=diamond-client -Dversion=2.0.5.5 -Dpackaging=jar
